@@ -3,7 +3,6 @@ import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
@@ -12,11 +11,11 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import next from "./tech/next.svg";
 import gsap from "./tech/gsap.svg";
+import vscode from "./tech/vscode.png";
 
 import Profile from "./profile.jpg";
 import tick from "./tick.svg";
 import copy from "./copy.svg";
-
 
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
@@ -35,7 +34,6 @@ export {
   gsap,
   Github,
   javascript,
-  mongodb,
   nodejs,
   reactjs,
   redux,
@@ -47,5 +45,6 @@ export {
   copy,
   project1,
   project2,
-  project3
+  project3,
+  vscode,
 };

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Button = ({ name, isBeam = false, containerClass }) => {
   return (
     <button className={`btn ${containerClass}`}>
@@ -11,4 +13,11 @@ const Button = ({ name, isBeam = false, containerClass }) => {
     </button>
   );
 };
+
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  isBeam: PropTypes.bool,
+  containerClass: PropTypes.string,
+};
+
 export default Button;

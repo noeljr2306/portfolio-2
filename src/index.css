@@ -1,5 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/general-sans");
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +14,7 @@ body {
   background: #010103;
   font-family: "General Sans", sans-serif;
 }
-.noel-font{
+.noel-font {
   font-family: "Pinyon Script", serif;
   font-weight: 400;
   font-style: normal;
@@ -108,7 +108,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 @layer utilities {
-  .heading{
+  .heading {
     @apply text-4xl font-bold mb-5;
   }
   .btn {
@@ -125,7 +125,7 @@ body {
     @apply w-full h-full border bg-zinc-900 border-zinc-800 shadow-inner shadow-zinc-600/40 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
   .head-text {
-    @apply text-white font-generalsans font-bold lg:text-[70px] text-[40px] lg:leading-[95px] leading-[60px];
+    @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent font-generalsans font-bold lg:text-[70px] text-[40px] lg:leading-[95px] leading-[60px];
   }
   .sub-title {
     @apply text-gray-300 font-medium mt-6 xl:text-[25px] text-[17px];
@@ -139,5 +139,17 @@ body {
 
   .grid-subtext {
     @apply text-[#afb0b6] text-base font-generalsans xl:leading-[30px];
+  }
+  @keyframes loadingBar {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .animate-loading-bar {
+    animation: loadingBar 2s linear forwards;
   }
 }

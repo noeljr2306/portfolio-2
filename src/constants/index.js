@@ -7,7 +7,6 @@ import {
   redux,
   tailwind,
   nodejs,
-  mongodb,
   figma,
   threejs,
   git,
@@ -16,6 +15,7 @@ import {
   project3,
   next,
   gsap,
+  vscode,
 } from "../assets";
 import {
   RiBug2Line,
@@ -110,6 +110,10 @@ export const technologies = [
     icon: reactjs,
   },
   {
+    name: "Next JS",
+    icon: next,
+  },
+  {
     name: "Redux Toolkit",
     icon: redux,
   },
@@ -120,10 +124,6 @@ export const technologies = [
   {
     name: "Node JS",
     icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
   },
   {
     name: "Three JS",
@@ -140,6 +140,10 @@ export const technologies = [
   {
     name: "Gsap",
     icon: gsap,
+  },
+  {
+    name: "Visual Studio Code IDE",
+    icon: vscode,
   },
 ];
 
@@ -181,26 +185,6 @@ export const Projects = [
       "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website.",
     tags: [reactjs, tailwind, redux, nodejs],
     image: project3,
-    href: "#",
-    live: "#",
-  },
-  {
-    id: 5,
-    name: "Briefly",
-    description:
-      "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website.",
-    tags: [reactjs, next, tailwind, redux, gsap],
-    image: project2,
-    href: "#",
-    live: "#",
-  },
-  {
-    id: 6,
-    name: "Briefly",
-    description:
-      "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website.",
-    tags: [reactjs, next, tailwind, redux, gsap],
-    image: project2,
     href: "#",
     live: "#",
   },
