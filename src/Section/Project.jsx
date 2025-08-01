@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Github } from "../assets";
-import { Projects } from "../Constants";
+import { Projects } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
