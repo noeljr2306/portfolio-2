@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../Components/Button";
 import { FiGlobe, FiMapPin, FiTable } from "react-icons/fi";
-import { workflow } from "../Constants";
+import { workflow } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
