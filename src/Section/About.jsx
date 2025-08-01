@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../Components/Button";
 import { FiGlobe, FiMapPin, FiTable } from "react-icons/fi";
 import { workflow } from "../Constants/index.js";
+import Profile from "../assets/profile.jpg";
+import Map from "../assets/map.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -214,7 +216,7 @@ const About = () => {
             className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden"
           >
             <img
-              src="/assets/profile.jpg"
+              src={Profile}
               alt="Noel Eruotor"
               className="w-full border rounded-xl border-gray-700 h-fit object-contain transform hover:scale-105 transition-transform duration-500"
             />
@@ -225,7 +227,7 @@ const About = () => {
           <div ref={globeCardRef} className="grid-container">
             <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
               <img
-                src="/assets/map.png"
+                src={Map}
                 alt="Map of Nigeria"
                 className="w-full h-auto rounded-3xl"
               />
