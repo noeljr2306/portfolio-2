@@ -14,15 +14,14 @@ import gsap from "./tech/gsap.svg";
 import vscode from "./tech/vscode.png";
 
 import Profile from "./profile.jpg";
-import tick from "./tick.svg";
-import copy from "./copy.svg";
 
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
 import Instagram from "./instagram.svg";
-import project1 from "./project/project1.jpg";
-import project2 from "./project/project2.jpg";
-import project3 from "./project/project3.jpg";
+import briefly from "./project/briefly.png";
+import burnaboy from "./project/burnaboy.png";
+import connectly from "./project/cms-preview.png";
+import freshcut from "./project/freshcut.png";
 export {
   css,
   figma,
@@ -41,10 +40,9 @@ export {
   typescript,
   threejs,
   Profile,
-  tick,
-  copy,
-  project1,
-  project2,
-  project3,
+  briefly,
+  burnaboy,
+  freshcut,
   vscode,
+  connectly,
 };

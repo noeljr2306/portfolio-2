@@ -71,15 +71,6 @@ const Header = () => {
           },
           "-=0.4"
         );
-
-      gsap.to(nameRef.current, {
-        y: -5,
-        duration: 2,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 2,
-      });
     }, headerRef);
 
     return () => ctx.revert();
@@ -100,7 +91,7 @@ const Header = () => {
             Hi I`m{" "}
             <span
               ref={nameRef}
-              className="text-zinc-300 noel-font inline-block"
+              className="text-zinc-300 noel-font inline-block noel-glow"
             >
               Noel
             </span>

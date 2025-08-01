@@ -162,7 +162,7 @@ const Footer = () => {
     { name: "About", url: "#about" },
     { name: "Projects", url: "#projects" },
     { name: "Contact", url: "#contact" },
-    { name: "Resume", url: "/resume.pdf" },
+    { name: "Resume", url: "/src/assets/resume.pdf" },
   ];
 
   return (

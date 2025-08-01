@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Github } from "../assets";
 import { Projects } from "../constants";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
@@ -19,12 +18,10 @@ const Project = () => {
     const description = descriptionRef.current;
     const projectCards = projectsRef.current;
 
-    // Set initial states
     gsap.set(heading, { opacity: 0, y: 50 });
     gsap.set(description, { opacity: 0, y: 30 });
     gsap.set(projectCards, { opacity: 0, y: 60, scale: 0.9 });
 
-    // Create timeline for section animations
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
@@ -34,7 +31,6 @@ const Project = () => {
       }
     });
 
-    // Animate heading
     tl.to(heading, {
       opacity: 1,
       y: 0,
@@ -191,7 +187,7 @@ const Project = () => {
               </div>
               <div className="flex">
                 <a
-                  href={item.href}
+                  href={item.live}
                   className="xl:text-[15px] md:text-s text-sm text-gray-300 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

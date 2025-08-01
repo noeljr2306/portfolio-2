@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Globe from "react-globe.gl";
 import Button from "../Components/Button";
 import { FiGlobe, FiMapPin, FiTable } from "react-icons/fi";
 import { workflow } from "../Constants";
@@ -17,35 +16,43 @@ const About = () => {
   const workflowCardRef = useRef(null);
   const passionCardRef = useRef(null);
   const codeBlockRef = useRef(null);
-  
+
   const [typedCode, setTypedCode] = useState({
     line1: "",
     line2: "",
     line3: "",
     line4: "",
-    line5: ""
+    line5: "",
   });
 
   const codeLines = {
     line1: "const passion = {",
     line2: "  problemSolving: true,",
-    line3: "  continuousLearning: \"always\",",
-    line4: "  innovation: \"driving force\"",
-    line5: "};"
+    line3: '  continuousLearning: "always",',
+    line4: '  innovation: "driving force"',
+    line5: "};",
   };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-    
-      gsap.set([profileCardRef.current, imageCardRef.current, globeCardRef.current, workflowCardRef.current, passionCardRef.current], {
-        opacity: 0,
-        y: 50,
-        scale: 0.95
-      });
+      gsap.set(
+        [
+          profileCardRef.current,
+          imageCardRef.current,
+          globeCardRef.current,
+          workflowCardRef.current,
+          passionCardRef.current,
+        ],
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.95,
+        }
+      );
 
       gsap.set(headingRef.current, {
         opacity: 0,
-        y: 30
+        y: 30,
       });
 
       gsap.to(headingRef.current, {
@@ -56,12 +63,16 @@ const About = () => {
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       });
 
-      const cards = [profileCardRef.current, imageCardRef.current, globeCardRef.current];
-      
+      const cards = [
+        profileCardRef.current,
+        imageCardRef.current,
+        globeCardRef.current,
+      ];
+
       gsap.to(cards, {
         opacity: 1,
         y: 0,
@@ -72,8 +83,8 @@ const About = () => {
         scrollTrigger: {
           trigger: profileCardRef.current,
           start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       });
 
       ScrollTrigger.create({
@@ -85,16 +96,17 @@ const About = () => {
             y: 0,
             scale: 1,
             duration: 0.8,
-            ease: "power3.out"
+            ease: "power3.out",
           });
 
-          
-          const workflowItems = workflowCardRef.current.querySelectorAll('.workflow-item');
-          gsap.fromTo(workflowItems, 
+          const workflowItems =
+            workflowCardRef.current.querySelectorAll(".workflow-item");
+          gsap.fromTo(
+            workflowItems,
             {
               opacity: 0,
               x: -30,
-              scale: 0.9
+              scale: 0.9,
             },
             {
               opacity: 1,
@@ -103,13 +115,12 @@ const About = () => {
               duration: 0.6,
               ease: "back.out(1.7)",
               stagger: 0.15,
-              delay: 0.2
+              delay: 0.2,
             }
           );
-        }
+        },
       });
 
-      
       ScrollTrigger.create({
         trigger: passionCardRef.current,
         start: "top 75%",
@@ -120,11 +131,10 @@ const About = () => {
             scale: 1,
             duration: 0.8,
             ease: "power3.out",
-            onComplete: startTypingAnimation
+            onComplete: startTypingAnimation,
           });
-        }
+        },
       });
-
     }, aboutRef);
 
     return () => ctx.revert();
@@ -137,27 +147,26 @@ const About = () => {
           let currentIndex = 0;
           const typeInterval = setInterval(() => {
             if (currentIndex <= text.length) {
-              setTypedCode(prev => ({
+              setTypedCode((prev) => ({
                 ...prev,
-                [lineKey]: text.slice(0, currentIndex)
+                [lineKey]: text.slice(0, currentIndex),
               }));
               currentIndex++;
             } else {
               clearInterval(typeInterval);
               resolve();
             }
-          }, 50); 
+          }, 50);
         }, delay);
       });
     };
 
-   
     const animateTyping = async () => {
-      await typeText(codeLines.line1, 'line1', 200);
-      await typeText(codeLines.line2, 'line2', 100);
-      await typeText(codeLines.line3, 'line3', 100);
-      await typeText(codeLines.line4, 'line4', 100);
-      await typeText(codeLines.line5, 'line5', 100);
+      await typeText(codeLines.line1, "line1", 200);
+      await typeText(codeLines.line2, "line2", 100);
+      await typeText(codeLines.line3, "line3", 100);
+      await typeText(codeLines.line4, "line4", 100);
+      await typeText(codeLines.line5, "line5", 100);
     };
 
     animateTyping();
@@ -165,7 +174,9 @@ const About = () => {
 
   return (
     <section ref={aboutRef} className="sm:px-6 px-5 my-20" id="about">
-      <h1 ref={headingRef} className="heading">About Me</h1>
+      <h1 ref={headingRef} className="heading">
+        About Me
+      </h1>
       <div className="grid xl:grid-cols-4 xl:gird-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-2 xl:col-span-2">
           <div ref={profileCardRef} className="grid-container">
@@ -198,7 +209,10 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1">
-          <div ref={imageCardRef} className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden">
+          <div
+            ref={imageCardRef}
+            className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden"
+          >
             <img
               src="src/assets/profile.jpg"
               alt="Noel Eruotor"
@@ -209,23 +223,20 @@ const About = () => {
 
         <div className="col-span-2 xl:col-span-1 xl:row-span-2">
           <div ref={globeCardRef} className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[350px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+            <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
+              <img
+                src="/src/assets/map.png"
+                alt="Map of Nigeria with Abuja location"
+                className="w-full h-auto rounded-3xl"
               />
             </div>
             <div>
-              <h2 className="grid-headtext">
-                I am based in Abuja, Nigeria and I am open to work remotely
-                worldwide.
-              </h2>
+              <h2 className="grid-headtext">Based in Abuja, Nigeria</h2>
+              <p className="grid-subtext mt-8">
+                Passionate about solving real problems through code and
+                creativity, with a strong focus on remote collaboration across
+                diverse teams.
+              </p>
             </div>
             <Button
               name="Contact Me"
@@ -236,8 +247,10 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1">
-          <div ref={workflowCardRef} className="grid-container relative overflow-hidden">
-            
+          <div
+            ref={workflowCardRef}
+            className="grid-container relative overflow-hidden"
+          >
             <div className="relative z-10">
               <h2 className="grid-headtext flex items-center gap-2">
                 My work process
@@ -248,7 +261,7 @@ const About = () => {
                     key={id}
                     className="workflow-item list-none flex items-center gap-3 border border-zinc-700/50 bg-gradient-to-r from-zinc-800/80 to-zinc-800/60 p-2 rounded-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-zinc-700/80 hover:to-zinc-700/60 hover:border-zinc-600/50 group backdrop-blur-sm"
                     style={{
-                      animationDelay: `${index * 0.1}s`
+                      animationDelay: `${index * 0.1}s`,
                     }}
                   >
                     <div className="flex-1">
@@ -263,8 +276,6 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              
-             
             </div>
           </div>
         </div>
@@ -274,32 +285,57 @@ const About = () => {
             <h2 className="grid-headtext">My passion for coding</h2>
             <div className="bg-zinc-800/50 rounded-xl p-6 mb-6 border border-zinc-700/30 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-50"></div>
-              <div ref={codeBlockRef} className="font-mono text-sm space-y-2 relative z-10">
+              <div
+                ref={codeBlockRef}
+                className="font-mono text-sm space-y-2 relative z-10"
+              >
                 <div className="text-purple-400">
                   {typedCode.line1}
-                  {typedCode.line1.length > 0 && typedCode.line1.length === codeLines.line1.length ? '' : 
-                   typedCode.line1.length > 0 && typedCode.line1.length < codeLines.line1.length ? 
-                   <span className="animate-pulse">|</span> : ''}
+                  {typedCode.line1.length > 0 &&
+                  typedCode.line1.length === codeLines.line1.length ? (
+                    ""
+                  ) : typedCode.line1.length > 0 &&
+                    typedCode.line1.length < codeLines.line1.length ? (
+                    <span className="animate-pulse">|</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="text-blue-400 ml-4">
                   {typedCode.line2}
-                  {typedCode.line2.length > 0 && typedCode.line2.length < codeLines.line2.length ? 
-                   <span className="animate-pulse">|</span> : ''}
+                  {typedCode.line2.length > 0 &&
+                  typedCode.line2.length < codeLines.line2.length ? (
+                    <span className="animate-pulse">|</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="text-green-400 ml-4">
                   {typedCode.line3}
-                  {typedCode.line3.length > 0 && typedCode.line3.length < codeLines.line3.length ? 
-                   <span className="animate-pulse">|</span> : ''}
+                  {typedCode.line3.length > 0 &&
+                  typedCode.line3.length < codeLines.line3.length ? (
+                    <span className="animate-pulse">|</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="text-yellow-400 ml-4">
                   {typedCode.line4}
-                  {typedCode.line4.length > 0 && typedCode.line4.length < codeLines.line4.length ? 
-                   <span className="animate-pulse">|</span> : ''}
+                  {typedCode.line4.length > 0 &&
+                  typedCode.line4.length < codeLines.line4.length ? (
+                    <span className="animate-pulse">|</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="text-purple-400">
                   {typedCode.line5}
-                  {typedCode.line5.length > 0 && typedCode.line5.length < codeLines.line5.length ? 
-                   <span className="animate-pulse">|</span> : ''}
+                  {typedCode.line5.length > 0 &&
+                  typedCode.line5.length < codeLines.line5.length ? (
+                    <span className="animate-pulse">|</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>
