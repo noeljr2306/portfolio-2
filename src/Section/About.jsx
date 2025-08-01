@@ -214,7 +214,7 @@ const About = () => {
             className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden"
           >
             <img
-              src="/src/assets/profile.jpg"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1VGMNG515C31bm0zOrU4ymJktQI-YqGXVfwMlJDtAP9mVnYa3W-pwB-h-LgOBtFOi2BtsmiKOW0yap-wquyd2o-vjgONSTPMvZK3AQ-4OUg5Dt2W0FNOTDVorA5Wp2NGLmh2Di2aFGUWNWnDjqSp4uyRCREYfO8xtLmu0g897Em0P77dzTWxm1YKf0gf0/s810/profile.jpg"
               alt="Noel Eruotor"
               className="w-full border rounded-xl border-gray-700 h-fit object-contain transform hover:scale-105 transition-transform duration-500"
             />
@@ -225,7 +225,7 @@ const About = () => {
           <div ref={globeCardRef} className="grid-container">
             <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
               <img
-                src="/src/assets/map.png"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAzJ4jrXtrymtWQzK4WeUucblOmPGOGk00PX5uZvkz1TRMB1b7TEMFCTQb-5eicwCNGg2cnJGRHuk4LPDLGW5P7435zj7NTV-oa_g6vlqi35Tmb8_peWvczsCYwvVWm7hgPdUrl1eAPYB2Judw-Jp0G8cbIyQl4mVtxt1eHe0fQYSss2Zx3jHuNNTfC0G8/s500/map-removebg-preview.png"
                 alt="Map of Nigeria"
                 className="w-full h-auto rounded-3xl"
               />
