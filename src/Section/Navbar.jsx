@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { navLinks } from "../constants";
+import { navLinks } from "../Constants";
 import { RiCloseLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
 
