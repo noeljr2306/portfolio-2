@@ -214,7 +214,7 @@ const About = () => {
             className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden"
           >
             <img
-              src="src/assets/profile.jpg"
+              src="/assets/profile.jpg"
               alt="Noel Eruotor"
               className="w-full border rounded-xl border-gray-700 h-fit object-contain transform hover:scale-105 transition-transform duration-500"
             />
@@ -225,8 +225,8 @@ const About = () => {
           <div ref={globeCardRef} className="grid-container">
             <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
               <img
-                src="/src/assets/map.png"
-                alt="Map of Nigeria with Abuja location"
+                src="/assets/map.png"
+                alt="Map of Nigeria"
                 className="w-full h-auto rounded-3xl"
               />
             </div>

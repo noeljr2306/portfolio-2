@@ -13,8 +13,6 @@ import next from "./tech/next.svg";
 import gsap from "./tech/gsap.svg";
 import vscode from "./tech/vscode.png";
 
-import Profile from "./profile.jpg";
-
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
 import Instagram from "./instagram.svg";
@@ -39,7 +37,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  Profile,
   briefly,
   burnaboy,
   freshcut,
