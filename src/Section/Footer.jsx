@@ -150,7 +150,7 @@ const Footer = () => {
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/noel_jr23",
+      url: "https://twitter.com/noeljr_dev",
       icon: (
         <img src={Twitter} alt="Twitter" className="h-7 w-7 object-contain" />
       ),

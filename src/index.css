@@ -140,18 +140,6 @@ body {
   .grid-subtext {
     @apply text-[#afb0b6] text-[0.9rem] font-generalsans xl:leading-[30px];
   }
-  @keyframes loadingBar {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  .animate-loading-bar {
-    animation: loadingBar 2s linear forwards;
-  }
   @media (max-width: 640px) {
     .sm\:before-blur-15::before {
       filter: blur(15px);

@@ -256,7 +256,7 @@ const About = () => {
                 My work process
               </h2>
               <div className="flex flex-col gap-3 mt-6">
-                {workflow.map(({ id, name, icon }, index) => (
+                {workflow.map(({ id, name, icon: Icon }, index) => (
                   <div
                     key={id}
                     className="workflow-item list-none flex items-center gap-3 border border-zinc-700/50 bg-gradient-to-r from-zinc-800/80 to-zinc-800/60 p-2 rounded-xl transform hover:scale-105 transition-all duration-300 hover:bg-gradient-to-r hover:from-zinc-700/80 hover:to-zinc-700/60 hover:border-zinc-600/50 group backdrop-blur-sm"
@@ -271,7 +271,9 @@ const About = () => {
                       <div className="w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-500 mt-1"></div>
                     </div>
                     <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-blue-400 text-sm">{icon}</span>
+                      <span className="text-blue-400 text-sm">
+                        <Icon />
+                      </span>
                     </div>
                   </div>
                 ))}
