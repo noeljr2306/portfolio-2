@@ -1,15 +1,15 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import viteCompression from 'vite-plugin-compression';
-import legacy from '@vitejs/plugin-legacy';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import viteCompression from "vite-plugin-compression";
+import legacy from "@vitejs/plugin-legacy";
 
 export default defineConfig({
   plugins: [
     react(),
     viteCompression(), // gzip compression
     legacy({
-      targets: ['defaults', 'not IE 11'] // support older browsers
-    })
+      targets: ["defaults", "not IE 11"], // support older browsers
+    }),
   ],
   build: {
     sourcemap: false, // disable sourcemaps in production
@@ -17,27 +17,27 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          react: ['react', 'react-dom'], // separate React into its own chunk
-          vendors: ['axios', 'lodash'] // example: separate heavy libraries
+          react: ["react", "react-dom"], // separate React into its own chunk
+          vendors: ["axios", "lodash"], // example: separate heavy libraries
         },
         // add prefetch for dynamic imports
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]'
-      }
-    }
+        entryFileNames: "assets/[name].[hash].js",
+        chunkFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash].[ext]",
+      },
+    },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom'], // pre-bundle these for faster dev start
+    include: ["react", "react-dom"], // pre-bundle these for faster dev start
   },
   server: {
     fs: {
-      strict: false
-    }
+      strict: false,
+    },
   },
   preview: {
     headers: {
-      'Cache-Control': 'max-age=31536000, immutable' // cache static assets aggressively
-    }
-  }
+      "Cache-Control": "max-age=31536000, immutable", // cache static assets aggressively
+    },
+  },
 });
