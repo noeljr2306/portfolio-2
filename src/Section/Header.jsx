@@ -6,7 +6,9 @@ const Header = () => {
   const headerRef = useRef(null);
   const introTextRef = useRef(null);
   const nameRef = useRef(null);
-  const headlineRef = useRef(null);
+  const line1Ref = useRef(null);
+  const line2Ref = useRef(null);
+  const line3Ref = useRef(null);
   const buttonRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -16,7 +18,9 @@ const Header = () => {
         [
           introTextRef.current,
           nameRef.current,
-          headlineRef.current,
+          line1Ref.current,
+          line2Ref.current,
+          line3Ref.current,
           buttonRef.current,
         ],
         {
@@ -50,16 +54,26 @@ const Header = () => {
           "-=0.4"
         )
 
-        .to(
-          headlineRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
+        .to(line1Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.3")
+
+        .to(line2Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.4")
+
+        .to(line3Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.4")
 
         .to(
           buttonRef.current,
@@ -69,7 +83,7 @@ const Header = () => {
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.4"
+          "-=0.3"
         );
     }, headerRef);
 
@@ -82,11 +96,11 @@ const Header = () => {
       className="w-full min-h-screen mx-auto flex relative"
       id="home"
     >
-      <div className="absolute inset-0 xl:top-[120px] top-[190px] max-w-7xl mx-auto flex align-middle gap-5 sm:px-[100px] px-5">
-        <div>
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center gap-5 sm:px-[100px] px-5 pt-[160px] sm:pt-[120px]">
+        <div className="w-full max-w-3xl text-center">
           <p
             ref={introTextRef}
-            className="font-base xl:text-[35px] text-[20px] text-center sm:mb-[20px] mb-[28px] text-zinc-600"
+            className="font-base xl:text-[35px] text-[20px] text-zinc-600 mb-6"
           >
             Hi I`m{" "}
             <span
@@ -98,18 +112,26 @@ const Header = () => {
             <br />
             Software developer based in Nigeria
           </p>
-          <h1 ref={headlineRef} className="head-text text-center">
-            Building wonderful digital experiences through Technology
-          </h1>
+          <div className="space-y-2">
+            <h1 ref={line1Ref} className="head-text block">
+              Building wonderful digital
+            </h1>
+            <h1 ref={line2Ref} className="head-text block">
+              experiences through
+            </h1>
+            <h1 ref={line3Ref} className="head-text block">
+              technology
+            </h1>
+          </div>
           <div
             ref={buttonRef}
-            className="absolute sm:bottom-[50px] bottom-[160px] left-0 right-0 w-full z-10 sm:px-10 px-5"
+            className="mt-10 md:mt-30"
           >
-            <a href="#works">
+            <a href="#projects">
               <Button
                 name="See my work"
                 isBeam
-                containerClass="sm:w-fit w-[300px] sm:min-w-[320px] tracking-wider"
+                containerClass="w-[220px] sm:w-auto min-w-[250px] sm:min-w-[280px] md:min-w-[220px] tracking-wider"
               />
             </a>
           </div>

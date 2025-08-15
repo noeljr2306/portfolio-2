@@ -190,18 +190,18 @@ const About = () => {
                   to new technologies to improve my skill stack.
                 </p>
               </div>
-              <div className="flex mt-5 gap-3">
-                <div className="flex gap-1 border border-zinc-800 bg-zinc-800 p-2 rounded-lg transform hover:scale-105 transition-transform duration-200">
+              <div className="flex mt-5 gap-3 flex-wrap">
+                <div className="flex gap-1 border border-zinc-800 bg-zinc-800 p-2 rounded-lg transform hover:scale-105 transition-transform duration-200 min-w-0">
                   <FiMapPin className="mt-1 text-green-500" />
-                  <p className="green-text-gradient">Nigeria</p>
+                  <p className="green-text-gradient truncate">Nigeria</p>
                 </div>
-                <div className="flex gap-1 border p-2 rounded-lg border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200">
+                <div className="flex gap-1 border p-2 rounded-lg border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200 min-w-0">
                   <FiGlobe className="mt-1 text-orange-500" />
-                  <p className="orange-text-gradient">English</p>
+                  <p className="orange-text-gradient truncate">English</p>
                 </div>
-                <div className="flex gap-1 border p-2 rounded-lg text-nowrap border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200">
+                <div className="flex gap-1 border p-2 rounded-lg border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200 min-w-0">
                   <FiTable className="mt-1 text-blue-500" />
-                  <p className="blue-text-gradient">Software Dev.</p>
+                  <p className="blue-text-gradient truncate">Software Dev.</p>
                 </div>
               </div>
             </div>

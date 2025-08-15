@@ -125,7 +125,7 @@ body {
     @apply w-full h-full border bg-zinc-900 border-zinc-800 shadow-inner shadow-zinc-600/40 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
   .head-text {
-    @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent font-generalsans font-bold lg:text-[70px] text-[40px] lg:leading-[95px] leading-[60px];
+    @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent font-generalsans font-bold lg:text-[60px] text-[30px] lg:leading-[79px] leading-[60px];
   }
   .sub-title {
     @apply text-gray-300 font-medium mt-6 xl:text-[25px] text-[17px];
