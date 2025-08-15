@@ -3,6 +3,8 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import useMobileDetection from "../../hooks/useMobileDetection";
+import StarsMobile from "./StarsMobile";
 
 const Stars = (props) => {
   const ref = useRef();
@@ -31,7 +33,15 @@ const Stars = (props) => {
 };
 
 const StarsCanvas = () => {
+  const { isMobile, isReducedMotion } = useMobileDetection();
+  
   if (typeof window === "undefined") return null;
+  
+  // Use lightweight 2D stars for mobile or reduced motion
+  if (isMobile || isReducedMotion) {
+    return <StarsMobile />;
+  }
+
   return (
     <div className="w-full h-screen md:h-screen absolute inset-0 z-[-1]">
       <Canvas camera={{ position: [0, 0, 1] }}>
