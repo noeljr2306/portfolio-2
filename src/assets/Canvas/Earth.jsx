@@ -1,12 +1,22 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, useProgress } from "@react-three/drei";
 import useMobileDetection from "../../hooks/useMobileDetection";
 import EarthMobile from "./EarthMobile";
+import { Suspense } from "react";
+
+const Loader = () => {
+  const { progress } = useProgress();
+  return (
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="text-white text-xl">{progress.toFixed(0)}% loaded</div>
+    </div>
+  );
+};
 
 const Earth = () => {
-  const earth = useGLTF("./earth/scene.gltf");
-  return <primitive object={earth.scene} scale={9.0} position-y={0} />;
+  const { scene } = useGLTF("./earth/scene.gltf");
+  return <primitive object={scene} scale={9.0} position={[0, 0, 0]} />;
 };
 
 const EarthCanvas = () => {
@@ -29,17 +39,20 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
-      <ambientLight intensity={1.25} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <OrbitControls
-        enableZoom={false}
-        autoRotate
-        autoRotateSpeed={1.5}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
-      <Earth />
+      <Suspense fallback={<Loader />}>
+        <ambientLight intensity={1.25} />
+        <directionalLight position={[0, 0, 0.05]} />
+        <OrbitControls
+          enableZoom={false}
+          autoRotate
+          autoRotateSpeed={1.5}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Earth />
+      </Suspense>
     </Canvas>
   );
 };
+
 export default EarthCanvas;
