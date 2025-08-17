@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useProgress } from "@react-three/drei";
-import useMobileDetection from "../../hooks/useMobileDetection";
-import EarthMobile from "./EarthMobile";
 import { Suspense } from "react";
 
 const Loader = () => {
@@ -20,13 +18,6 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
-  const { isMobile, isReducedMotion } = useMobileDetection();
-
-  // Use lightweight static Earth for mobile or reduced motion
-  if (isMobile || isReducedMotion) {
-    return <EarthMobile />;
-  }
-
   return (
     <Canvas
       shadows
