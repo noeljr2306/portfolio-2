@@ -1,18 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF, useProgress, Html } from "@react-three/drei";
+import { OrbitControls, useGLTF} from "@react-three/drei";
 import { Suspense } from "react";
-
-const Loader = () => {
-  const { progress } = useProgress();
-  return (
-    <Html center>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <div className="text-white text-xl">{progress.toFixed(0)}% loaded</div>
-      </div>
-    </Html>
-  );
-};
 
 const Earth = () => {
   const { scene } = useGLTF("./earth/scene.gltf");
@@ -32,7 +21,7 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
-      <Suspense fallback={<Loader />}>
+      <Suspense>
         <ambientLight intensity={1.25} />
         <directionalLight position={[0, 0, 0.05]} />
         <OrbitControls
