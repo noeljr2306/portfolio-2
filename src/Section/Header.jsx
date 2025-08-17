@@ -10,7 +10,6 @@ const Header = () => {
   const line2Ref = useRef(null);
   const line3Ref = useRef(null);
   const buttonRef = useRef(null);
-  const canvasRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,12 +27,7 @@ const Header = () => {
           y: 50,
         }
       );
-
-      gsap.set(canvasRef.current, {
-        opacity: 0,
-        scale: 0.8,
-      });
-
+      
       const tl = gsap.timeline({ delay: 0.5 });
 
       tl.to(introTextRef.current, {

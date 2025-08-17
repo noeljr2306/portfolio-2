@@ -1,14 +1,16 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF, useProgress } from "@react-three/drei";
+import { OrbitControls, useGLTF, useProgress, Html } from "@react-three/drei";
 import { Suspense } from "react";
 
 const Loader = () => {
   const { progress } = useProgress();
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <div className="text-white text-xl">{progress.toFixed(0)}% loaded</div>
-    </div>
+    <Html center>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="text-white text-xl">{progress.toFixed(0)}% loaded</div>
+      </div>
+    </Html>
   );
 };
 
