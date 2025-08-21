@@ -27,7 +27,7 @@ const Header = () => {
           y: 50,
         }
       );
-      
+
       const tl = gsap.timeline({ delay: 0.5 });
 
       tl.to(introTextRef.current, {
@@ -48,26 +48,38 @@ const Header = () => {
           "-=0.4"
         )
 
-        .to(line1Ref.current, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        }, "-=0.3")
+        .to(
+          line1Ref.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.3"
+        )
 
-        .to(line2Ref.current, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        }, "-=0.4")
+        .to(
+          line2Ref.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        )
 
-        .to(line3Ref.current, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        }, "-=0.4")
+        .to(
+          line3Ref.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.4"
+        )
 
         .to(
           buttonRef.current,
@@ -106,21 +118,12 @@ const Header = () => {
             <br />
             Software developer based in Nigeria
           </p>
-          <div className="space-y-2">
-            <h1 ref={line1Ref} className="head-text block">
-              Building wonderful digital
-            </h1>
-            <h1 ref={line2Ref} className="head-text block">
-              experiences through
-            </h1>
-            <h1 ref={line3Ref} className="head-text block">
-              technology
-            </h1>
+          <div className="space-y-2 head-text block">
+            <h1 ref={line1Ref}>Building wonderful digital</h1>
+            <h1 ref={line2Ref}>experiences through</h1>
+            <h1 ref={line3Ref}>technology</h1>
           </div>
-          <div
-            ref={buttonRef}
-            className="mt-10 md:mt-30"
-          >
+          <div ref={buttonRef} className="mt-10 md:mt-30">
             <a href="#projects">
               <Button
                 name="See my work"
