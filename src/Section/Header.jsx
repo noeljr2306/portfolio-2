@@ -27,7 +27,7 @@ const Header = () => {
           y: 50,
         }
       );
-
+      
       const tl = gsap.timeline({ delay: 0.5 });
 
       tl.to(introTextRef.current, {
@@ -48,38 +48,26 @@ const Header = () => {
           "-=0.4"
         )
 
-        .to(
-          line1Ref.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
+        .to(line1Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.3")
 
-        .to(
-          line2Ref.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.4"
-        )
+        .to(line2Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.4")
 
-        .to(
-          line3Ref.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.4"
-        )
+        .to(line3Ref.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }, "-=0.4")
 
         .to(
           buttonRef.current,
@@ -102,7 +90,7 @@ const Header = () => {
       className="w-full min-h-screen mx-auto flex relative"
       id="home"
     >
-      <div className="relative max-w-7xl mx-auto flex flex-col items-center gap-5 sm:px-[100px] px-5 pt-[160px] sm:pt-[120px]">
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center gap-5 sm:px-[100px] px-5 pt-[120px]">
         <div className="w-full max-w-3xl text-center">
           <p
             ref={introTextRef}
@@ -129,7 +117,10 @@ const Header = () => {
               technology
             </h1>
           </div>
-          <div ref={buttonRef} className="mt-10 md:mt-30">
+          <div
+            ref={buttonRef}
+            className="mt-10 md:mt-30"
+          >
             <a href="#projects">
               <Button
                 name="See my work"
