@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF} from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense } from "react";
 
 const Earth = () => {
-  const { scene } = useGLTF("/earth_model/scene.gltf");
+  const { scene } = useGLTF(import.meta.env.BASE_URL + "earth_model/scene.gltf");
   return <primitive object={scene} scale={9.0} position={[0, 0, 0]} />;
 };
 
@@ -21,7 +21,7 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
-      <Suspense>
+      <Suspense fallback={null}>
         <ambientLight intensity={1.25} />
         <directionalLight position={[0, 0, 0.05]} />
         <OrbitControls
