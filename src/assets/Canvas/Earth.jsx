@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF} from "@react-three/drei";
 import { Suspense } from "react";
 
 const Earth = () => {
-  const { scene } = useGLTF("./earth/scene.gltf");
+  const { scene } = useGLTF("/earth_model/scene.gltf");
   return <primitive object={scene} scale={9.0} position={[0, 0, 0]} />;
 };
 
