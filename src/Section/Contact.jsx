@@ -2,14 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import emailjs from "@emailjs/browser";
-import EarthCanvas from "../assets/Canvas/Earth";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const form = useRef();
   const formRef = useRef();
-  const canvasRef = useRef(null);
   const successMessageRef = useRef(null);
 
   // Form state
@@ -33,7 +31,7 @@ const Contact = () => {
 
   // Send email function
   const sendEmail = async (e) => {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     setIsSubmitting(true);
 
     try {
@@ -92,23 +90,13 @@ const Contact = () => {
 
     // Set initial states
     gsap.set(formRef.current, { opacity: 0, x: -100 });
-    gsap.set(canvasRef.current, { opacity: 0, x: 100 });
 
     tl.to(formRef.current, {
       opacity: 1,
       x: 0,
       duration: 1.2,
       ease: "power3.out",
-    }).to(
-      canvasRef.current,
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power3.out",
-      },
-      "-=0.8"
-    );
+    });
 
     // Cleanup
     return () => {
@@ -149,83 +137,81 @@ const Contact = () => {
         </div>
       )}
 
-      <div className="flex xl:flex-row flex-col-reverse gap-16 overflow-hidden">
-        <div
-          ref={formRef}
-          className="flex-1 bg-zinc-900 border-zinc-800 border p-8 rounded-2xl relative"
-        >
-          <h1 className="heading">Contact Me</h1>
-          <p className="grid-subtext">Reach out to me quickly!</p>
+      <div
+        ref={formRef}
+        className="bg-zinc-900 border-zinc-800 border p-8 rounded-2xl relative max-w-6xl mx-auto"
+      >
+        <h1 className="heading">Contact Me</h1>
+        <p className="grid-subtext">Reach out to me quickly!</p>
 
-          <form className="flex flex-col gap-5" onSubmit={sendEmail} ref={form}>
-            <label className="mt-4 flex flex-col gap-3">
-              <span className="text-white font-medium mb-2">Your Name</span>
-              <input
-                type="text"
-                name="name"
-                placeholder="What is your name?"
-                className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                disabled={isSubmitting}
-              />
-            </label>
+        <div className="mt-8" ref={form}>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Left side - Name and Email */}
+            <div className="flex-1 flex flex-col gap-5">
+              <label className="flex flex-col gap-3">
+                <span className="text-white font-medium mb-2">Your Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="What is your name?"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  disabled={isSubmitting}
+                />
+              </label>
 
-            <label className="mt-4 flex flex-col gap-3">
-              <span className="text-white font-medium mb-2">Your Email</span>
-              <input
-                type="email"
-                name="email"
-                placeholder="What is your email?"
-                className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                disabled={isSubmitting}
-              />
-            </label>
+              <label className="flex flex-col gap-3">
+                <span className="text-white font-medium mb-2">Your Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="What is your email?"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  disabled={isSubmitting}
+                />
+              </label>
+            </div>
 
-            <label className="mt-2 flex flex-col gap-3">
-              <span className="text-white font-medium mb-2">Your Message</span>
-              <textarea
-                name="message"
-                placeholder="What do you want to say?"
-                rows="5"
-                className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium resize-none focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                disabled={isSubmitting}
-              />
-            </label>
+            {/* Right side - Message */}
+            <div className="flex-1">
+              <label className="flex flex-col gap-3 h-full">
+                <span className="text-white font-medium mb-2">Your Message</span>
+                <textarea
+                  name="message"
+                  placeholder="What do you want to say?"
+                  rows="7"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium resize-none focus:ring-2 focus:ring-zinc-500 transition-all duration-300 h-full min-h-[160px]"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  disabled={isSubmitting}
+                />
+              </label>
+            </div>
+          </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 ${
-                isSubmitting
-                  ? "bg-zinc-500 text-zinc-400 cursor-not-allowed"
-                  : "btn"
-              }`}
-            >
-              {isSubmitting ? (
-                <div className="flex items-center justify-center gap-2">
-                  <div className="w-4 h-4 border-2 border-zinc-400 border-t-transparent rounded-full animate-spin"></div>
-                  Sending...
-                </div>
-              ) : (
-                "Send Message"
-              )}
-            </button>
-          </form>
-        </div>
-
-        <div
-          ref={canvasRef}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[450px]"
-        >
-          <EarthCanvas />
+          <div
+            onClick={sendEmail}
+            className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer ${
+              isSubmitting
+                ? "bg-zinc-500 text-zinc-400 cursor-not-allowed"
+                : "btn"
+            }`}
+          >
+            {isSubmitting ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-4 h-4 border-2 border-zinc-400 border-t-transparent rounded-full animate-spin"></div>
+                Sending...
+              </div>
+            ) : (
+              "Send Message"
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ import Github from "./github.svg";
 import Instagram from "./instagram.svg";
 import briefly from "./project/briefly.png";
 import burnaboy from "./project/burnaboy.png";
-import connectly from "./project/cms-preview.png";
+import autoflex from "./project/autoflex.png";
 import freshcut from "./project/freshcut.png";
 export {
   css,
@@ -45,6 +45,6 @@ export {
   burnaboy,
   freshcut,
   vscode,
-  connectly,
+  autoflex,
   Map,
 };

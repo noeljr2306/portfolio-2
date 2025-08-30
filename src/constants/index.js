@@ -12,11 +12,11 @@ import {
   git,
   briefly,
   burnaboy,
-  connectly,
   freshcut,
   next,
   gsap,
   vscode,
+  autoflex,
 } from "../assets";
 import {
   RiBug2Line,
@@ -147,13 +147,13 @@ export const Projects = [
   },
   {
     id: 5,
-    name: "Connectly",
+    name: "AutoFlex",
     description:
-      "A straightforward contact management system that allows users to create, view, update, and delete contacts. Built with a clean UI and efficient state handling for smooth user interaction.",
+      "A modern, responsive car rental website UI with a clean layout and easy navigation, designed to enhance user experience and streamline the booking process.",
     tags: [reactjs, tailwind],
-    image: connectly,
-    href: "https://github.com/noeljr2306/contact-manager.git",
-    live: "https://https://vercel.com/noeljr2306s-projects/contact-management-system/F8iPm4XEUa1g4Fa99ZduJ4PKoWrG",
+    image: autoflex,
+    href: "https://github.com/noeljr2306/autoflex.git",
+    live: "https://autoflex-hfei.vercel.app/",
   },
 
   {
