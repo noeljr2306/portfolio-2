@@ -1,22 +1,13 @@
-import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../Components/Button";
-import { FiGlobe, FiMapPin, FiTable } from "react-icons/fi";
+import { FiGlobe, FiMapPin, FiPaperclip } from "react-icons/fi";
 import { workflow } from "../constants";
+import { useState, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const aboutRef = useRef(null);
-  const headingRef = useRef(null);
-  const profileCardRef = useRef(null);
-  const imageCardRef = useRef(null);
-  const globeCardRef = useRef(null);
-  const workflowCardRef = useRef(null);
-  const passionCardRef = useRef(null);
-  const codeBlockRef = useRef(null);
-
   const [typedCode, setTypedCode] = useState({
     line1: "",
     line2: "",
@@ -32,114 +23,6 @@ const About = () => {
     line4: '  innovation: "driving force"',
     line5: "};",
   };
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.set(
-        [
-          profileCardRef.current,
-          imageCardRef.current,
-          globeCardRef.current,
-          workflowCardRef.current,
-          passionCardRef.current,
-        ],
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.95,
-        }
-      );
-
-      gsap.set(headingRef.current, {
-        opacity: 0,
-        y: 30,
-      });
-
-      gsap.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      const cards = [
-        profileCardRef.current,
-        imageCardRef.current,
-        globeCardRef.current,
-      ];
-
-      gsap.to(cards, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: profileCardRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: workflowCardRef.current,
-        start: "top 75%",
-        onEnter: () => {
-          gsap.to(workflowCardRef.current, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power3.out",
-          });
-
-          const workflowItems =
-            workflowCardRef.current.querySelectorAll(".workflow-item");
-          gsap.fromTo(
-            workflowItems,
-            {
-              opacity: 0,
-              x: -30,
-              scale: 0.9,
-            },
-            {
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "back.out(1.7)",
-              stagger: 0.15,
-              delay: 0.2,
-            }
-          );
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: passionCardRef.current,
-        start: "top 75%",
-        onEnter: () => {
-          gsap.to(passionCardRef.current, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            onComplete: startTypingAnimation,
-          });
-        },
-      });
-    }, aboutRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const startTypingAnimation = () => {
     const typeText = (text, lineKey, delay = 0) => {
       return new Promise((resolve) => {
@@ -172,19 +55,21 @@ const About = () => {
     animateTyping();
   };
 
+  useEffect(() => {
+    startTypingAnimation();
+  }, []);
+
   return (
-    <section ref={aboutRef} className="sm:px-6 px-5 my-20" id="about">
-      <h1 ref={headingRef} className="heading">
-        About Me
-      </h1>
+    <section className="sm:px-6 px-5 my-20" id="about">
+      <h1 className="heading">About Me</h1>
       <div className="grid xl:grid-cols-4 xl:gird-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-2 xl:col-span-2">
-          <div ref={profileCardRef} className="grid-container">
+          <div className="grid-container">
             <div className="flex flex-col mt-3">
               <div>
                 <h1 className="grid-headtext">Hi I&apos;m Noel Eruotor</h1>
                 <p className="grid-subtext">
-                  <br />I am a software developer with over three years of
+                  <br />I am a frontend developer with over three years of
                   experience. I have optimized my skills in the development of
                   web and mobile applications. I am also learning and adapting
                   to new technologies to improve my skill stack.
@@ -200,8 +85,8 @@ const About = () => {
                   <p className="orange-text-gradient truncate">English</p>
                 </div>
                 <div className="flex gap-1 border p-2 rounded-lg border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200 min-w-0">
-                  <FiTable className="mt-1 text-blue-500" />
-                  <p className="blue-text-gradient truncate">Software Dev.</p>
+                  <FiPaperclip className="mt-1 text-blue-500" />
+                  <p className="blue-text-gradient truncate">Frontend Developer</p>
                 </div>
               </div>
             </div>
@@ -209,10 +94,7 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1">
-          <div
-            ref={imageCardRef}
-            className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden"
-          >
+          <div className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col gap-5 overflow-hidden">
             <img
               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1VGMNG515C31bm0zOrU4ymJktQI-YqGXVfwMlJDtAP9mVnYa3W-pwB-h-LgOBtFOi2BtsmiKOW0yap-wquyd2o-vjgONSTPMvZK3AQ-4OUg5Dt2W0FNOTDVorA5Wp2NGLmh2Di2aFGUWNWnDjqSp4uyRCREYfO8xtLmu0g897Em0P77dzTWxm1YKf0gf0/s810/profile.jpg"
               alt="Noel Eruotor"
@@ -222,7 +104,7 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1 xl:row-span-2">
-          <div ref={globeCardRef} className="grid-container">
+          <div className="grid-container">
             <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
               <img
                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAzJ4jrXtrymtWQzK4WeUucblOmPGOGk00PX5uZvkz1TRMB1b7TEMFCTQb-5eicwCNGg2cnJGRHuk4LPDLGW5P7435zj7NTV-oa_g6vlqi35Tmb8_peWvczsCYwvVWm7hgPdUrl1eAPYB2Judw-Jp0G8cbIyQl4mVtxt1eHe0fQYSss2Zx3jHuNNTfC0G8/s500/map-removebg-preview.png"
@@ -247,10 +129,7 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1">
-          <div
-            ref={workflowCardRef}
-            className="grid-container relative overflow-hidden"
-          >
+          <div className="grid-container relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="grid-headtext flex items-center gap-2">
                 My work process
@@ -283,14 +162,11 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-2">
-          <div ref={passionCardRef} className="grid-container">
+          <div className="grid-container">
             <h2 className="grid-headtext">My passion for coding</h2>
             <div className="bg-zinc-800/50 rounded-xl p-6 mb-6 border border-zinc-700/30 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-50"></div>
-              <div
-                ref={codeBlockRef}
-                className="font-mono text-sm space-y-2 relative z-10"
-              >
+              <div className="font-mono text-sm space-y-2 relative z-10">
                 <div className="text-purple-400">
                   {typedCode.line1}
                   {typedCode.line1.length > 0 &&
