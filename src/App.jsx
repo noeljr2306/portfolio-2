@@ -9,20 +9,18 @@ import Project from "./Section/Project";
 import TechStack from "./Section/Tech";
 const App = () => {
   return (
-    <>
-      <div className="relative mx-auto max-w-7xl duration-700">
-        <Navbar />
-        <Header />
-        <About />
-        <TechStack />
-        <Project />
-        <div className="relative">
-          <StarsCanvas />
-          <Contact />
-        </div>
-        <Footer />
+    <div className="relative duration-700 max-w-7xl mx-auto">
+      <Navbar />
+      <Header />
+      <About />
+      <TechStack />
+      <Project />
+      <div className="relative">
+        <StarsCanvas />
+        <Contact />
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

@@ -79,58 +79,72 @@ export const technologies = [
   {
     name: "HTML 5",
     icon: html,
+    color: "#E34F26",
   },
   {
     name: "CSS 3",
     icon: css,
+    color: "#1572B6",
   },
   {
     name: "JavaScript",
     icon: javascript,
+    color: "#F7DF1E",
   },
   {
     name: "TypeScript",
     icon: typescript,
+    color: "#3178C6",
   },
   {
     name: "React JS",
     icon: reactjs,
+    color: "#61DAFB",
   },
   {
     name: "Next JS",
     icon: next,
+    color: "#fff",
   },
   {
     name: "Redux Toolkit",
     icon: redux,
+    color: "#764ABC",
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
+    color: "#38BDF8",
   },
   {
     name: "Node JS",
     icon: nodejs,
+    color: "#339933",
   },
   {
     name: "Three JS",
     icon: threejs,
+    color: "#fff",
   },
   {
     name: "Git",
     icon: git,
+    color: "#F05032",
   },
   {
     name: "Figma",
     icon: figma,
+    color: "#1ABCFE",
   },
   {
     name: "Gsap",
     icon: gsap,
+    color: "#BADA55",
   },
   {
     name: "Visual Studio Code IDE",
     icon: vscode,
+    color: "#007ACC",
   },
 ];
 

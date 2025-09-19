@@ -17,7 +17,7 @@ const Project = () => {
       </p>
 
       <div className="mt-20 grid gap-7 sm:grid-cols-2 grid-cols-1">
-        {Projects.map((item, index) => (
+        {Projects.map((item) => (
           <div
             key={item.id}
             className="bg-zinc-800 shadow-inner shadow-zinc-400/40 p-5 rounded-2xl w-full cursor-pointer transition-shadow hover:shadow-zinc-400/60"

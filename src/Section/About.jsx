@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../Components/Button";
 import { FiGlobe, FiMapPin, FiPaperclip } from "react-icons/fi";
 import { workflow } from "../constants";
+import Globe from "react-globe.gl";
 import { useState, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -86,7 +87,9 @@ const About = () => {
                 </div>
                 <div className="flex gap-1 border p-2 rounded-lg border-zinc-800 bg-zinc-800 transform hover:scale-105 transition-transform duration-200 min-w-0">
                   <FiPaperclip className="mt-1 text-blue-500" />
-                  <p className="blue-text-gradient truncate">Frontend Developer</p>
+                  <p className="blue-text-gradient truncate">
+                    Frontend Developer
+                  </p>
                 </div>
               </div>
             </div>
@@ -105,11 +108,16 @@ const About = () => {
 
         <div className="col-span-2 xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[350px] h-[360px] flex justify-center items-center">
-              <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAzJ4jrXtrymtWQzK4WeUucblOmPGOGk00PX5uZvkz1TRMB1b7TEMFCTQb-5eicwCNGg2cnJGRHuk4LPDLGW5P7435zj7NTV-oa_g6vlqi35Tmb8_peWvczsCYwvVWm7hgPdUrl1eAPYB2Judw-Jp0G8cbIyQl4mVtxt1eHe0fQYSss2Zx3jHuNNTfC0G8/s500/map-removebg-preview.png"
-                alt="Map of Nigeria"
-                className="w-full h-auto rounded-3xl"
+            <div className="rounded-3xl w-full sm:h-[350px] h-[320px] flex justify-center items-center overflow-hidden">
+              <Globe
+                height={326}
+                width={326}
+                backgroundColor="rgba(0, 0, 0, 0)"
+                backgroundImageOpacity={0.5}
+                showAtmosphere
+                showGraticules
+                globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
               />
             </div>
             <div>
