@@ -179,7 +179,7 @@ const Header = () => {
             Noel
             <span className="mx-4 items-center">
               <img
-                src="/src/assets/profile.jpg"
+                src="/profile.jpg"
                 alt="Noel profile"
                 className="w-11 h-11 md:w-12 md:h-12 rounded-full object-cover inline-block border border-zinc-600 
                           animate-scale-in hover:scale-110 hover:rotate-3 transition-all duration-300 ease-out cursor-pointer"
