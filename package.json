@@ -14,7 +14,6 @@
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.114.6",
     "@react-three/fiber": "^8.15.14",
-    "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.11.0",
     "gsap": "^3.12.5",
     "lodash": "^4.17.21",
