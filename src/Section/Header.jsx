@@ -178,12 +178,19 @@ const Header = () => {
           <h1 className="head-text items-center max-w-7xl animate-fade-in-up">
             Noel
             <span className="mx-4 items-center">
-              <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcX6g2GbfOu_c1HjuJUExUSgt1H6XvdQo6kh_JcL6xFmq6wl-jfrJBf5LTkcscQfbxedtkeRLgh_wC2MDVmQjbIU-4yMGWkXHLvXQ1iLvru4sBSNIDu10VzoOEnJT_I1ULOacK6q3eXdAz7fKiPuLth7cinbu4pK8dDhjXn101bTuC3qp78u-Up3TTisl-/s1080/IMG-20240115-WA0011.jpg"
-                alt="Noel profile"
-                className="w-11 h-11 md:w-12 md:h-12 rounded-full object-cover inline-block border border-zinc-600 
-                          animate-scale-in hover:scale-110 hover:rotate-3 transition-all duration-300 ease-out cursor-pointer"
-              />
+              <picture>
+                <source srcSet="/noel.webp" type="image/webp" />
+                <img
+                  src="/profile.jpg"
+                  alt="Noel profile"
+                  width="48"
+                  height="48"
+                  className="w-11 h-11 md:w-12 md:h-12 rounded-full object-cover inline-block border border-zinc-600 
+              animate-scale-in hover:scale-110 hover:rotate-3 transition-all duration-300 ease-out cursor-pointer"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
             </span>
             is a developer crafting web & mobile experiences with clean design +
             purposeful code.
