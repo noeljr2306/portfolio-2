@@ -128,11 +128,13 @@ const About = () => {
                 diverse teams.
               </p>
             </div>
-            <Button
-              name="Contact Me"
-              containerClass="px-8 mt-8 w-full"
-              isBeam
-            />
+            <a href="#contact">
+              <Button
+                name="Contact Me"
+                containerClass="px-8 mt-8 w-full"
+                isBeam
+              />
+            </a>
           </div>
         </div>
 
