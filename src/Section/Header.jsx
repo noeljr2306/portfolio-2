@@ -188,8 +188,7 @@ const Header = () => {
                 />
               </picture>
             </span>
-            is a developer crafting web & mobile experiences with clean design +
-            purposeful code.
+            is a frontend developer crafting digital experiences with code + creativity.
           </h1>
 
           <div className="mt-10 md:mt-30 flex items-start animate-fade-in-up-delay">

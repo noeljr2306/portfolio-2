@@ -153,7 +153,7 @@ export const Projects = [
     id: 1,
     name: "Briefly",
     description:
-      "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website.",
+      "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website. It is ideal for researchers, content creators and anyone seeking for quick understanding.",
     tags: [reactjs, tailwind, redux],
     image: briefly,
     href: "https://github.com/noeljr2306/briefly-ai-summarizer-website.git",
