@@ -135,7 +135,7 @@ const Contact = () => {
         <h1 className="heading">Contact Me</h1>
         <p className="grid-subtext">Reach out to me quickly!</p>
 
-        <div className="mt-8" ref={form}>
+        <form className="mt-8" ref={form} onSubmit={sendEmail}>
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 flex flex-col gap-5">
               <label className="flex flex-col gap-3">
@@ -169,7 +169,9 @@ const Contact = () => {
 
             <div className="flex-1">
               <label className="flex flex-col gap-3 h-full">
-                <span className="text-white font-medium mb-2">Your Message</span>
+                <span className="text-white font-medium mb-2">
+                  Your Message
+                </span>
                 <textarea
                   name="message"
                   placeholder="What do you want to say?"
@@ -184,12 +186,13 @@ const Contact = () => {
             </div>
           </div>
 
-          <div
-            onClick={sendEmail}
-            className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer ${
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 ${
               isSubmitting
                 ? "bg-zinc-500 text-zinc-400 cursor-not-allowed"
-                : "btn"
+                : "btn cursor-pointer"
             }`}
           >
             {isSubmitting ? (
@@ -200,8 +203,8 @@ const Contact = () => {
             ) : (
               "Send Message"
             )}
-          </div>
-        </div>
+          </button>
+        </form>
       </div>
     </section>
   );
