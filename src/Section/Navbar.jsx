@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`absolute left-0 right-0 bg-black-900 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block ${
+        className={`absolute left-0 right-0 bg-zinc-900 backdrop-blur-xl transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block ${
           isOpen ? "max-h-screen" : "max-h-0"
         }`}
       >
