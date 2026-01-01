@@ -237,7 +237,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-zinc-500">
-            <p>&copy; {new Date().getFullYear()} Eruotor Noel. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Eruotor Noel Jr. All rights reserved.</p>
           </div>
         </div>
       </div>
