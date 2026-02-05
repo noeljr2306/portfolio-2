@@ -107,7 +107,7 @@ body {
     @apply flex relative w-full h-[16.55rem] text-[#3b3b3b] text-[0.88rem] leading-[1.25rem] transition-all duration-300 ease-in-out flex-col gap-6;
   }
   .grid-subtext {
-    @apply text-[#afb0b6] text-[0.8rem] xl:leading-[30px];
+    @apply text-[#afb0b6] text-[0.8rem] xl:leading-[32px];
   }
   @media (max-width: 640px) {
     .sm\:before-blur-15::before {

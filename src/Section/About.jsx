@@ -97,11 +97,11 @@ const About = () => {
         </div>
 
         <div className="col-span-2 xl:col-span-1">
-          <div className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg flex flex-col">
+          <div className="w-full h-full bg-zinc-900 border-zinc-800 rounded-lg overflow-hidden">
             <img
               src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1VGMNG515C31bm0zOrU4ymJktQI-YqGXVfwMlJDtAP9mVnYa3W-pwB-h-LgOBtFOi2BtsmiKOW0yap-wquyd2o-vjgONSTPMvZK3AQ-4OUg5Dt2W0FNOTDVorA5Wp2NGLmh2Di2aFGUWNWnDjqSp4uyRCREYfO8xtLmu0g897Em0P77dzTWxm1YKf0gf0/s810/profile.jpg"
               alt="Noel Eruotor"
-              className="w-full border rounded-xl border-gray-700 h-fit object-cover transform hover:scale-105 transition-transform duration-500"
+              className="w-full h-full border rounded-xl border-gray-700 object-cover transform hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
