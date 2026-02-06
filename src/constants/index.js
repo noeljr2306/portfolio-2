@@ -152,42 +152,89 @@ export const Projects = [
   {
     id: 1,
     name: "Briefly",
+    slug: "briefly",
     description:
       "An AI-powered website application that allows users to simply paste a website link, providing a concise summary of the website. It is ideal for researchers, content creators and anyone seeking for quick understanding.",
     tags: [reactjs, tailwind, redux],
     image: briefly,
     href: "https://github.com/noeljr2306/briefly-ai-summarizer-website.git",
     live: "https://brieflyaisummarizer.netlify.app/",
+    problemStatement:
+      "Users often need quick summaries of websites without reading the entire content, especially for research or content creation.",
+    useCases: [
+      "Researchers can quickly summarize multiple websites for literature reviews.",
+      "Content creators can get insights from competitor sites.",
+      "Students can summarize educational resources efficiently.",
+    ],
+    solutionDescription:
+      "Developed an AI-powered web app using React, Tailwind CSS, and Redux for state management. Integrated an AI API to generate summaries from pasted URLs.",
+    challengesLearnings:
+      "Learned to integrate AI APIs and handle asynchronous data fetching. Overcame challenges in UI/UX for simple input-output flow.",
   },
   {
-    id: 5,
+    id: 2,
     name: "AutoFlex",
+    slug: "autoflex",
     description:
       "A modern, responsive car rental website UI with a clean layout and easy navigation, designed to enhance user experience and streamline the booking process.",
     tags: [reactjs, tailwind],
     image: autoflex,
     href: "https://github.com/noeljr2306/autoflex.git",
     live: "https://autoflex-hfei.vercel.app/",
+    problemStatement:
+      "Car rental websites often have cluttered interfaces, making it hard for users to find and book vehicles quickly.",
+    useCases: [
+      "Travelers can easily browse and book cars for trips.",
+      "Businesses can rent fleets for corporate use.",
+      "Individuals can find affordable rental options.",
+    ],
+    solutionDescription:
+      "Built a responsive UI using React and Tailwind CSS, focusing on clean design, easy navigation, and intuitive booking flow.",
+    challengesLearnings:
+      "Improved skills in responsive design and user-centered UI. Learned to optimize for performance in web apps.",
   },
-
   {
     id: 3,
     name: "A GSAP Animated Website Of Burna Boy",
+    slug: "burna-boy-website",
     description:
       "A visually engaging website dedicated to Burna Boy, featuring smooth GSAP animations, interactive scrolling effects, and dynamic visuals to showcase his music and biography.",
     tags: [reactjs, tailwind, gsap],
     image: burnaboy,
-    href: "https://burnaboy-website.vercel.app",
-    live: "https://github.com/noeljr2306/burnaboy-website.git",
+    href: "https://github.com/noeljr2306/burnaboy-website.git",
+    live: "https://burnaboy-website.vercel.app",
+    problemStatement:
+      "Fan websites for artists lack engaging animations and interactivity, failing to capture the artist's dynamic persona.",
+    useCases: [
+      "Fans can explore Burna Boy's biography with interactive elements.",
+      "Music enthusiasts can view discography with smooth transitions.",
+      "Promoters can use the site for event promotions.",
+    ],
+    solutionDescription:
+      "Created an animated website using React, Tailwind CSS, and GSAP for scroll-triggered animations and dynamic visuals.",
+    challengesLearnings:
+      "Mastered GSAP for complex animations. Learned to balance performance with visual appeal in web development.",
   },
   {
     id: 4,
     name: "Freshcut",
+    slug: "freshcut",
     description:
       "A modern barbershop website with a clean design, showcasing services, barber profiles, and an integrated booking system. Built for a seamless user experience across devices.",
     tags: [reactjs, tailwind],
     image: freshcut,
     href: "https://github.com/noeljr2306/freshcuts.git",
     live: "https://freshcuts-nine.vercel.app/",
+    problemStatement:
+      "Barbershops need online presence to attract customers, but many sites are outdated or hard to navigate.",
+    useCases: [
+      "Customers can view services and book appointments online.",
+      "Barbers can showcase their profiles and specialties.",
+      "Business owners can manage bookings and customer inquiries.",
+    ],
+    solutionDescription:
+      "Developed a modern website with React and Tailwind CSS, including service listings, barber profiles, and a booking system.",
+    challengesLearnings:
+      "Gained experience in building booking systems. Learned to design for mobile-first approach.",
   },
 ];
