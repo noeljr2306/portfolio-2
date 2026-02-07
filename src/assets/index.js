@@ -16,12 +16,14 @@ import vscode from "./tech/vscode.png";
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
 import Instagram from "./instagram.svg";
-import briefly from "./project/briefly.png";
 import burnaboy from "./project/burnaboy.png";
-import autoflex from "./project/autoflex.png";
+import krafta from "./project/krafta.png";
+import medipoint from "./project/medipoint.png"
 import freshcut from "./project/freshcut.png";
+import briefly from "./project/briefly.png";
 export {
   css,
+  briefly,
   figma,
   next,
   git,
@@ -37,9 +39,9 @@ export {
   tailwind,
   typescript,
   threejs,
-  briefly,
+  krafta,
   burnaboy,
   freshcut,
   vscode,
-  autoflex,
+  medipoint,
 };
