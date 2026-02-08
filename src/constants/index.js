@@ -171,7 +171,7 @@ export const Projects = [
       "Engineered a high-performance marketplace and administrative command center using Next.js and TypeScript. The platform features a dual-interface architecture: a consumer-facing booking engine and a comprehensive admin dashboard for user vetting, service categorization, and real-time platform monitoring.",
     challengesLearnings:
       "Navigated the complexities of managing multi-user role state—specifically implementing RBAC (Role-Based Access Control) to ensure secure boundaries between public users, service pros, and internal admins.",
-  }
+  },
  {
     id: 2,
     name: "Medipoint",
