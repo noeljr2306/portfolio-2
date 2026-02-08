@@ -157,41 +157,42 @@ export const Projects = [
       "A sophisticated digital ecosystem connecting homeowners with skilled service professionals through a seamless, trust-based marketplace.",
     tags: [next, tailwind, typescript],
     image: krafta,
-    href: "https://github.com/krafta",
-    live: "https://krafta-olo83n2lf-noeljr2306s-projects.vercel.app/",
+    href: "https://github.com/noeljr2306/krafta.git",
+    live: "https://krafta-eight.vercel.app/",
     problemStatement:
       "The service industry often suffers from a lack of transparency and accessibility, making it difficult for users to find vetted technicians on demand.",
     useCases: [
       "Homeowners can source verified electrical or plumbing experts within minutes.",
       "Professional technicians can digitize their workflow and scale their client base.",
       "Contractors can manage service requests through a centralized, intuitive interface.",
+      "Administrators can oversee platform health, verify service providers, and manage dispute resolution via a dedicated dashboard.",
     ],
     solutionDescription:
-      "Engineered a high-performance marketplace using Next.js for server-side rendering and TypeScript for robust type safety. Integrated dynamic filtering and real-time availability to bridge the gap between service providers and seekers.",
+      "Engineered a high-performance marketplace and administrative command center using Next.js and TypeScript. The platform features a dual-interface architecture: a consumer-facing booking engine and a comprehensive admin dashboard for user vetting, service categorization, and real-time platform monitoring.",
     challengesLearnings:
-      "Navigated the complexities of managing multi-user role state and optimized the search infrastructure to handle geographical data efficiently.",
-  },
-  {
-    id: 5,
-    name: "Briefly",
-    slug: "briefly",
+      "Navigated the complexities of managing multi-user role state—specifically implementing RBAC (Role-Based Access Control) to ensure secure boundaries between public users, service pros, and internal admins.",
+  }
+ {
+    id: 2,
+    name: "Medipoint",
+    slug: "medipoint",
     description:
-      "A cutting-edge AI utility designed to combat information overload by distilling long-form web content into high-impact, digestible summaries.",
-    tags: [reactjs, tailwind, redux],
-    image: briefly,
-    href: "https://github.com/noeljr2306/briefly.git",
-    live: "https://brieflyaisummarizer.netlify.app/",
+      "A patient-centric healthcare portal designed to simplify medical scheduling and bridge the communication gap between clinics and patients.",
+    tags: [next, tailwind],
+    image: medipoint,
+    href: "https://github.com/noeljr2306/medipoint-system.git",
+    live: "https://medipoint-system-blue.vercel.app/",
     problemStatement:
-      "In an era of digital saturation, professionals and students struggle to filter through lengthy articles and documentation to find core insights quickly.",
+      "Traditional medical booking systems are often fragmented and cumbersome, leading to missed appointments and administrative overhead for clinics.",
     useCases: [
-      "Researchers can perform rapid literature reviews by extracting key findings from multiple URLs.",
-      "Content creators can analyze competitor long-form content for strategy inspiration in seconds.",
-      "Knowledge workers can bypass clickbait and fluff to get straight to the essential data points.",
+      "Patients can view real-time practitioner availability and secure slots instantly.",
+      "Healthcare providers can streamline their daily schedules and reduce patient wait times.",
+      "Medical administrators can manage patient records and visit history through a clean dashboard.",
     ],
     solutionDescription:
-      "Engineered an intelligent summarization engine utilizing Next.js for a performant frontend and Redux for managing complex application states. The system leverages advanced NLP (Natural Language Processing) APIs to parse and synthesize web content into structured executive summaries.",
+      "Developed a responsive scheduling system with a focus on 'frictionless' UI. Leveraged React's component-driven architecture to build a reusable booking engine that prioritizes accessibility and user data privacy.",
     challengesLearnings:
-      "Mastered the integration of asynchronous AI middleware and addressed the complexities of handling diverse DOM structures during web scraping and content extraction.",
+      "Focused on mastering complex state management for date-time logic and refined my approach to building accessible, mobile-first layouts.",
   },
   {
     id: 3,
