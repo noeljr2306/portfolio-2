@@ -17,6 +17,7 @@ import {
   vscode,
   krafta,
   briefly,
+  medipoint
 } from "../assets";
 import {
   RiBug2Line,
