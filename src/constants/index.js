@@ -178,7 +178,7 @@ export const Projects = [
     slug: "medipoint",
     description:
       "A patient-centric healthcare portal designed to simplify medical scheduling and bridge the communication gap between clinics and patients.",
-    tags: [next, tailwind],
+    tags: [next, tailwind, typescript],
     image: medipoint,
     href: "https://github.com/noeljr2306/medipoint-system.git",
     live: "https://medipoint-system-blue.vercel.app/",
