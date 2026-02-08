@@ -16,7 +16,6 @@ import {
   gsap,
   vscode,
   krafta,
-  briefly,
   medipoint
 } from "../assets";
 import {
