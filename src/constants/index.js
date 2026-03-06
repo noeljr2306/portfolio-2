@@ -11,12 +11,12 @@ import {
   threejs,
   git,
   burnaboy,
-  freshcut,
+  studio,
   next,
   gsap,
   vscode,
   krafta,
-  medipoint
+  medipoint,
 } from "../assets";
 import {
   RiBug2Line,
@@ -172,7 +172,7 @@ export const Projects = [
     challengesLearnings:
       "Navigated the complexities of managing multi-user role state—specifically implementing RBAC (Role-Based Access Control) to ensure secure boundaries between public users, service pros, and internal admins.",
   },
- {
+  {
     id: 2,
     name: "Medipoint",
     slug: "medipoint",
@@ -218,24 +218,24 @@ export const Projects = [
   },
   {
     id: 4,
-    name: "Freshcut",
-    slug: "freshcut",
+    name: "A 3D customizer studio",
+    slug: "3dcustomizer",
     description:
-      "A premium grooming interface that redefines the barbershop experience through a minimalist, service-oriented digital storefront.",
-    tags: [reactjs, tailwind],
-    image: freshcut,
-    href: "https://github.com/noeljr2306/freshcuts.git",
-    live: "https://freshcuts-nine.vercel.app/",
+      "An interactive 3D shirt customisation studio that lets users design their own apparel in real time. From painting directly onto the fabric to applying images and graphics, the platform transforms a plain shirt into a personal canvas where creativity meets technology.",
+    tags: [reactjs, threejs, tailwind],
+    image: studio,
+    href: "https://github.com/noeljr2306/3d-customizer.git",
+    live: "https://3d-customizer-steel.vercel.app/",
     problemStatement:
-      "Local service businesses often struggle with unprofessional online identities that don't reflect the quality of their physical craftsmanship.",
+      "Most online clothing stores limit customers to pre-designed apparel, leaving little room for personal creativity. Users who want something unique often have no intuitive way to visualise or experiment with their designs before production.",
     useCases: [
-      "Clients can browse detailed grooming services and select their preferred stylist.",
-      "Shop owners can present a luxury brand image that justifies premium pricing.",
-      "Busy professionals can book and manage their grooming appointments on the go.",
+      "Users can paint directly onto a 3D shirt model to create completely unique designs.",
+      "Creators can upload images, logos, or graphics and instantly apply them to the shirt surface.",
+      "Designers can experiment with colours, textures, and placements before finalising their concept.",
     ],
     solutionDescription:
-      "Crafted a modern, 'mobile-first' booking platform with a focus on visual hierarchy and typography. Implemented a logical flow that guides the user from service discovery to final confirmation in under four clicks.",
+      "Built an immersive browser-based customisation experience using modern web technologies. The platform renders a realistic 3D shirt that users can rotate, inspect, and modify in real time. Features like decal uploads, colour editing, and live texture painting allow users to transform a blank shirt into a personalised design while instantly seeing the results.",
     challengesLearnings:
-      "Strengthened my understanding of 'aesthetic-usability'—how a beautiful design can actually make a system feel more functional and trustworthy to the end-user.",
+      "Working with 3D rendering on the web pushed me to deeply understand real-time state management, texture mapping, and performance optimisation. I learned how small UI decisions can dramatically improve creative workflows, ensuring the experience feels smooth, intuitive, and fun for users designing their own apparel.",
   },
 ];

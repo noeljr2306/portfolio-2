@@ -19,7 +19,7 @@ const Project = () => {
           {Projects.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-zinc-900 border border-white/10 rounded-3xl p-6 hover:bg-zinc-900 transition-all duration-300 flex flex-col h-full"
+              className="group relative bg-zinc-900 border border-white/10 rounded-3xl p-4 hover:bg-zinc-900 transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative w-full h-60 overflow-hidden rounded-2xl mb-6">
                 <img

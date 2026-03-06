@@ -21,6 +21,7 @@ import krafta from "./project/krafta.png";
 import medipoint from "./project/medipoint.png"
 import freshcut from "./project/freshcut.png";
 import briefly from "./project/briefly.png";
+import studio from "./project/3dstudio.png";
 export {
   css,
   briefly,
@@ -44,4 +45,5 @@ export {
   freshcut,
   vscode,
   medipoint,
+  studio
 };
