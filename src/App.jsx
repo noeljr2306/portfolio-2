@@ -17,14 +17,14 @@ import TechStack from "./Section/Tech";
 import ProjectDetail from "./pages/ProjectDetail";
 
 const Home = () => {
-  const { hash } = useLocation();
+  const { hash, state } = useLocation();
 
   useEffect(() => {
     if (hash) {
       const timeout = setTimeout(() => {
         const element = document.getElementById(hash.replace("#", ""));
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: state?.instant ? "instant" : "smooth" });
         }
       }, 100);
       return () => clearTimeout(timeout);

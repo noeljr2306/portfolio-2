@@ -7,7 +7,7 @@ const ProjectDetail = () => {
   const project = Projects.find((p) => p.slug === slug);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
   if (!project) {
@@ -19,7 +19,7 @@ const ProjectDetail = () => {
             Project not found in our records.
           </p>
           <Link
-            to="/"
+            to="/#projects" state={{ instant: true }}
             className="px-6 py-3 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform"
           >
             Back to Home
@@ -39,7 +39,6 @@ const ProjectDetail = () => {
           >
             ← All Projects
           </Link>
-         
         </div>
       </nav>
 
