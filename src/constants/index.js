@@ -16,7 +16,8 @@ import {
   gsap,
   vscode,
   krafta,
-  medipoint,
+  ecosync,
+  zustand
 } from "../assets";
 import {
   RiBug2Line,
@@ -112,6 +113,11 @@ export const technologies = [
     color: "#764ABC",
   },
   {
+    name: "Zustand",
+    icon: zustand,
+    color: "#FF6B6B",
+  },
+  {
     name: "Tailwind CSS",
     icon: tailwind,
     color: "#38BDF8",
@@ -174,26 +180,27 @@ export const Projects = [
   },
   {
     id: 2,
-    name: "Medipoint",
-    slug: "medipoint",
+    name: "Eco-Sync",
+    slug: "eco-sync",
     description:
-      "A patient-centric healthcare portal designed to simplify medical scheduling and bridge the communication gap between clinics and patients.",
-    tags: [next, tailwind, typescript],
-    image: medipoint,
-    href: "https://github.com/noeljr2306/medipoint-system.git",
-    live: "https://medipoint-system-blue.vercel.app/",
+      "An interactive web application for visualizing global supply chains on a 3D globe, helping users understand environmental impacts and sustainability in supply networks.",
+    tags: [reactjs, threejs, zustand],
+    image: ecosync,
+    href: "https://github.com/noeljr2306/eco-sync.git",
+    live: "https://eco-sync-psi.vercel.app/",
     problemStatement:
-      "Traditional medical booking systems are often fragmented and cumbersome, leading to missed appointments and administrative overhead for clinics.",
+      "Global supply chains are complex and opaque, making it hard to assess their environmental footprint and sustainability without specialized tools.",
     useCases: [
-      "Patients can view real-time practitioner availability and secure slots instantly.",
-      "Healthcare providers can streamline their daily schedules and reduce patient wait times.",
-      "Medical administrators can manage patient records and visit history through a clean dashboard.",
+      "Businesses can visualize their supply chain nodes and routes on an interactive 3D globe.",
+      "Users can analyze environmental metrics and sustainability data through dynamic charts and filters.",
+      "Stakeholders can explore cause-and-effect relationships in supply networks to identify eco-friendly improvements.",
     ],
     solutionDescription:
-      "Developed a responsive scheduling system with a focus on 'frictionless' UI. Leveraged React's component-driven architecture to build a reusable booking engine that prioritizes accessibility and user data privacy.",
+      "Developed a performant React app with Three.js and React Globe GL for 3D visualization, integrated with D3 for data analysis and Zustand for state management.",
     challengesLearnings:
-      "Focused on mastering complex state management for date-time logic and refined my approach to building accessible, mobile-first layouts.",
+      "Managed the integration of React's declarative approach with Three.js's imperative 3D rendering. Optimized performance for large datasets and globe interactions, learning to balance visual fidelity with web performance.",
   },
+
   {
     id: 3,
     name: "The Burna Boy Experience",

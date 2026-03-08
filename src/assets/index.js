@@ -12,6 +12,7 @@ import threejs from "./tech/threejs.svg";
 import next from "./tech/next.svg";
 import gsap from "./tech/gsap.svg";
 import vscode from "./tech/vscode.png";
+import zustand from "./tech/zustand.png";
 
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
@@ -22,6 +23,7 @@ import medipoint from "./project/medipoint.png"
 import freshcut from "./project/freshcut.png";
 import briefly from "./project/briefly.png";
 import studio from "./project/3dstudio.png";
+import ecosync from "./project/ecosync.png";
 export {
   css,
   briefly,
@@ -29,6 +31,7 @@ export {
   next,
   git,
   html,
+  zustand,
   Instagram,
   Twitter,
   gsap,
@@ -45,5 +48,6 @@ export {
   freshcut,
   vscode,
   medipoint,
-  studio
+  studio,
+  ecosync
 };
