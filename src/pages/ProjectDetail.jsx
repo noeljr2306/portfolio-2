@@ -59,7 +59,7 @@ const ProjectDetail = () => {
             <img
               src={project.image}
               alt={project.name}
-              className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
         </div>
@@ -114,7 +114,7 @@ const ProjectDetail = () => {
                 {project.tags.map((icon, index) => (
                   <div
                     key={index}
-                    className="p-3 rounded-2xl bg-zinc-900/50 border border-white/10 hover:border-blue-500/50 transition-colors group"
+                    className="p-3 rounded-2xl bg-zinc-600/50 border border-white/10 hover:border-blue-500/50 transition-colors group"
                     title="Tech Stack Item"
                   >
                     <img
