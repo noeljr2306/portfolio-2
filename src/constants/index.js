@@ -16,8 +16,11 @@ import {
   gsap,
   vscode,
   krafta,
-  ecosync,
-  zustand
+  zustand,
+  solidity,
+  aave,
+  foundry,
+  lendvault,
 } from "../assets";
 import {
   RiBug2Line,
@@ -152,6 +155,11 @@ export const technologies = [
     icon: vscode,
     color: "#007ACC",
   },
+  {
+    name: "Solidity",
+    icon: solidity,
+    color: "#494949",
+  },
 ];
 
 export const Projects = [
@@ -180,27 +188,26 @@ export const Projects = [
   },
   {
     id: 2,
-    name: "Eco-Sync",
-    slug: "eco-sync",
+    name: "Lending & Liquidation Vault",
+    slug: "lending-liquidation-vault",
     description:
-      "An interactive web application for visualizing global supply chains on a 3D globe, helping users understand environmental impacts and sustainability in supply networks.",
-    tags: [reactjs, threejs, zustand],
-    image: ecosync,
-    href: "https://github.com/noeljr2306/eco-sync.git",
-    live: "https://eco-sync-psi.vercel.app/",
+      "A decentralized lending protocol where users deposit ETH as collateral and borrow against it, capped at 70% loan-to-value, priced live via a Chainlink oracle, with a working liquidation mechanism that lets anyone close an undercollateralized position if ETH's price crashes.",
+    tags: [solidity, foundry, reactjs, tailwind],
+    image: lendvault,
+    href: "https://github.com/noeljr2306/lending-vault.git",
+    live: "https://lending-vault-three.vercel.app/",
     problemStatement:
-      "Global supply chains are complex and opaque, making it hard to assess their environmental footprint and sustainability without specialized tools.",
+      "Most beginner DeFi projects stop at 'deposit and earn' and they never touch the part that actually makes lending protocols risky: what happens when collateral loses value faster than a borrower reacts. Skipping that means skipping the exact mechanic (liquidation) that separates a toy contract from something that models real financial risk.",
     useCases: [
-      "Businesses can visualize their supply chain nodes and routes on an interactive 3D globe.",
-      "Users can analyze environmental metrics and sustainability data through dynamic charts and filters.",
-      "Stakeholders can explore cause-and-effect relationships in supply networks to identify eco-friendly improvements.",
+      "A borrower deposits ETH and draws a stablecoin loan against it, watching their Health Factor — a single live risk score — update in real time as ETH's price moves.",
+      "If ETH's price drops enough to push a position underwater, any third party (in production, typically a bot) can repay part of that debt and receive a 5% bonus in seized collateral, the same economic incentive that keeps real protocols like Aave solvent without manual intervention.",
+      "A user exploring DeFi lending mechanics for the first time can see, end to end, how collateralization ratios, oracle pricing, and liquidation thresholds interact, not just read about them.",
     ],
     solutionDescription:
-      "Developed a performant React app with Three.js and React Globe GL for 3D visualization, integrated with D3 for data analysis and Zustand for state management.",
+      "Built with Foundry and Solidity: a LendingVault contract wired to a live Chainlink ETH/USD Price Feed on Sepolia, with a staleness check that rejects any price older than 3 hours. Borrowing is capped via a basis-points LTV calculation (70%), and a Health Factor formula ((collateral value × 70%) ÷ debt) determines liquidation eligibility. The liquidate() function lets any caller repay part of a borrower's debt in exchange for their ETH collateral plus a 5% bonus, calculated and capped against the position's actual remaining collateral. The frontend (Wagmi + RainbowKit + Vite) reads live contract state and renders the Health Factor as a color-coded circular gauge, with tabs for deposit, withdraw, borrow, and repay, each handling the ERC-20 approve-then-act pattern where relevant.",
     challengesLearnings:
-      "Managed the integration of React's declarative approach with Three.js's imperative 3D rendering. Optimized performance for large datasets and globe interactions, learning to balance visual fidelity with web performance.",
+      "The riskiest part of this build was proving the liquidation math actually worked, not just compiling — solved with a Foundry test that deploys a fully controllable mock price feed, forces a simulated ETH crash mid-test, and asserts both that the Health Factor correctly drops below 1.0 and that a second address can successfully liquidate the position and receive a real balance increase. Also hit a subtler Foundry gotcha: using small hardcoded test addresses like address(0xA) collided with real EVM precompile addresses reserved for BLS12-381 operations, silently breaking a test until switched to Foundry's makeAddr() helper. On the deploy side, learned that Solidity's require(answer > 0) before an int256-to-uint256 cast is what actually makes that cast safe — the linter can't see across require statements, so it flags it anyway, which is a good reminder to document intent explicitly rather than just suppress the warning.",
   },
-
   {
     id: 3,
     name: "The Burna Boy Experience",

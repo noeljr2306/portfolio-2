@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Github, Instagram, Twitter } from "../assets";
+import GlitchText from "../Components/GlitchText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -138,7 +139,7 @@ const Footer = () => {
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/enoel.jr",
+      url: "https://instagram.com/noel.jsx",
       icon: (
         <img
           src={Instagram}
@@ -150,7 +151,7 @@ const Footer = () => {
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/noeljr_dev",
+      url: "https://twitter.com/activenoel",
       icon: (
         <img src={Twitter} alt="Twitter" className="h-7 w-7 object-contain" />
       ),
@@ -162,7 +163,12 @@ const Footer = () => {
     { name: "About", url: "#about" },
     { name: "Projects", url: "#projects" },
     { name: "Contact", url: "#contact" },
-    { name: "Resume", url: "/src/assets/resume.pdf" },
+    {
+      name: "Resume",
+      url: "/resume.pdf",
+      download: "Noel-Eruotor-Resume.pdf",
+      external: true,
+    },
   ];
 
   return (
@@ -181,31 +187,39 @@ const Footer = () => {
       <div ref={contentRef} className="relative z-10 max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-8">
           <div className="flex-1 max-w-md">
-            <h3 className="text-2xl font-bold text-white mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Eruotor Noel
-            </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+            <GlitchText
+              as="h3"
+              text="Eruotor Noel"
+              className="text-2xl font-bold font-aeonik text-white mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent block"
+            />
+            <p className="text-zinc-400 text-sm font-sora leading-relaxed mb-4">
               Passionate developer crafting innovative digital experiences.
               Turning ideas into reality through clean code and creative
               solutions.
             </p>
-            <div className="flex items-center gap-2 text-zinc-500 text-xs">
+            <div className="flex items-center gap-2 text-zinc-500 text-xs font-sora">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               <span>Available for new opportunities</span>
             </div>
           </div>
 
           <div className="flex-1 lg:text-center">
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Quick Links
-            </h4>
+            <GlitchText
+              as="h4"
+              text="Quick Links"
+              className="text-lg font-semibold font-aeonik text-white mb-4 block"
+            />
             <nav className="flex flex-wrap lg:justify-center gap-6">
               {footerLinks.map((link, index) => (
                 <a
                   key={index}
                   ref={(el) => (linksRef.current[index] = el)}
                   href={link.url}
-                  className="text-zinc-400 hover:text-white text-sm transition-colors duration-300 cursor-pointer"
+                  {...(link.download ? { download: link.download } : {})}
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="text-zinc-400 hover:text-white text-sm font-sora transition-colors duration-300 cursor-pointer"
                 >
                   {link.name}
                 </a>
@@ -214,9 +228,11 @@ const Footer = () => {
           </div>
 
           <div className="flex-1 lg:text-right">
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Connect With Me
-            </h4>
+            <GlitchText
+              as="h4"
+              text="Connect With Me"
+              className="text-lg font-semibold font-aeonik text-white mb-4 block"
+            />
             <div className="flex lg:justify-end gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -236,7 +252,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-zinc-500">
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm font-sora text-zinc-500">
             <p>&copy; {new Date().getFullYear()} Eruotor Noel Jr. All rights reserved.</p>
           </div>
         </div>

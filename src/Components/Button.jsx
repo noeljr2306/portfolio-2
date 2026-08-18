@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 
 const Button = ({ name, isBeam = false, containerClass }) => {
   return (
-    <button className={`btn ${containerClass}`}>
+    <button
+      className={`btn hover:scale-[1.03] transition-transform duration-300 ease-smooth ${containerClass}`}
+    >
       {isBeam && (
         <span className="relative flex h-3 w-3">
           <span className="btn-ping"></span>

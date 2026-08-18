@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import emailjs from "@emailjs/browser";
+import GlitchText from "../Components/GlitchText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -119,8 +120,10 @@ const Contact = () => {
               </svg>
             </div>
             <div>
-              <p className="font-semibold">Message Sent Successfully! ✨</p>
-              <p className="text-sm text-gray-100">
+              <p className="font-semibold font-sora">
+                Message Sent Successfully! ✨
+              </p>
+              <p className="text-sm font-sora text-gray-100">
                 Thank you for reaching out. I`ll get back to you soon!
               </p>
             </div>
@@ -132,19 +135,21 @@ const Contact = () => {
         ref={formRef}
         className="bg-zinc-900 border-zinc-800 border p-8 rounded-2xl relative max-w-6xl mx-auto"
       >
-        <h1 className="heading">Contact Me</h1>
+        <GlitchText as="h1" text="Contact Me" className="heading" />
         <p className="grid-subtext">Reach out to me quickly!</p>
 
         <form className="mt-8" ref={form} onSubmit={sendEmail}>
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 flex flex-col gap-5">
               <label className="flex flex-col gap-3">
-                <span className="text-white font-medium mb-2">Your Name</span>
+                <span className="text-white font-medium font-sora mb-2">
+                  Your Name
+                </span>
                 <input
                   type="text"
                   name="name"
                   placeholder="What is your name?"
-                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium font-sora focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -153,12 +158,14 @@ const Contact = () => {
               </label>
 
               <label className="flex flex-col gap-3">
-                <span className="text-white font-medium mb-2">Your Email</span>
+                <span className="text-white font-medium font-sora mb-2">
+                  Your Email
+                </span>
                 <input
                   type="email"
                   name="email"
                   placeholder="What is your email?"
-                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium font-sora focus:ring-2 focus:ring-zinc-500 transition-all duration-300"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -169,14 +176,14 @@ const Contact = () => {
 
             <div className="flex-1">
               <label className="flex flex-col gap-3 h-full">
-                <span className="text-white font-medium mb-2">
+                <span className="text-white font-medium font-sora mb-2">
                   Your Message
                 </span>
                 <textarea
                   name="message"
                   placeholder="What do you want to say?"
                   rows="7"
-                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium resize-none focus:ring-2 focus:ring-zinc-500 transition-all duration-300 h-full min-h-[160px]"
+                  className="bg-zinc-800 py-4 px-6 placeholder:text-zinc-400 text-white rounded-lg outline-none border-none font-medium font-sora resize-none focus:ring-2 focus:ring-zinc-500 transition-all duration-300 h-full min-h-[160px]"
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -189,7 +196,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold shadow-lg transition-all duration-300 transform hover:scale-105 ${
+            className={`py-3 px-8 mt-8 rounded-xl outline-none w-full font-bold font-sora shadow-lg transition-all duration-300 transform hover:scale-105 ${
               isSubmitting
                 ? "bg-zinc-500 text-zinc-400 cursor-not-allowed"
                 : "btn cursor-pointer"

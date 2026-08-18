@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { Github } from "../assets";
 import { Projects } from "../constants";
+import GlitchText from "../Components/GlitchText";
 
 const Project = () => {
   return (
     <section className="sm:px-14 px-7 sm:py-20 py-10" id="projects">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          Selected Projects
-        </h2>
-        <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
+        <GlitchText
+          as="h2"
+          text="Selected Projects"
+          className="text-4xl md:text-5xl font-bold font-aeonik text-white mb-4 block"
+        />
+        <p className="text-zinc-400 text-lg font-sora max-w-2xl leading-relaxed">
           A showcase of my recent work, blending technical logic with creative
           design. Each piece represents a unique challenge solved with modern
           web technologies.
@@ -45,16 +48,16 @@ const Project = () => {
                 </div>
               </div>
 
-            
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-white mb-3">
-                  {item.name}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2 mb-6">
+                <GlitchText
+                  as="h3"
+                  text={item.name}
+                  className="text-2xl font-bold font-aeonik text-white mb-3 block"
+                />
+                <p className="text-zinc-400 text-sm font-sora leading-relaxed line-clamp-2 mb-6">
                   {item.description}
                 </p>
               </div>
-
 
               <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
                 <div className="flex -space-x-2">
@@ -75,7 +78,7 @@ const Project = () => {
 
                 <Link
                   to={`/projects/${item.slug}`}
-                  className="flex items-center gap-2 text-sm font-semibold text-white group/link"
+                  className="flex items-center gap-2 text-sm font-semibold font-sora text-white group/link"
                 >
                   View Study
                   <span className="text-xl transform transition-transform group-hover/link:translate-x-1">

@@ -13,20 +13,19 @@ import next from "./tech/next.svg";
 import gsap from "./tech/gsap.svg";
 import vscode from "./tech/vscode.png";
 import zustand from "./tech/zustand.png";
+import aave from "./tech/aave.png";
+import solidity from "./tech/solidity.png";
+import foundry from "./tech/foundry.png";
 
 import Twitter from "./twitter.svg";
 import Github from "./github.svg";
 import Instagram from "./instagram.svg";
 import burnaboy from "./project/burnaboy.png";
 import krafta from "./project/krafta.png";
-import medipoint from "./project/medipoint.png"
-import freshcut from "./project/freshcut.png";
-import briefly from "./project/briefly.png";
 import studio from "./project/3dstudio.png";
-import ecosync from "./project/ecosync.png";
+import lendvault from "./project/lending-vault.png"
 export {
   css,
-  briefly,
   figma,
   next,
   git,
@@ -45,9 +44,10 @@ export {
   threejs,
   krafta,
   burnaboy,
-  freshcut,
   vscode,
-  medipoint,
   studio,
-  ecosync
+  foundry,
+  lendvault,
+  aave,
+  solidity,
 };

@@ -54,12 +54,10 @@ body {
 }
 .violet-gradient {
   background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: -webkit-linear-gradient(to top, #4211ab, #804dee,);
+  background: linear-gradient(to top, #4211ab, #804dee,);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .orange-text-gradient {
   background: #f12711;
@@ -77,7 +75,7 @@ body {
 }
 @layer utilities {
   .heading {
-    @apply text-4xl font-bold mb-5;
+    @apply text-4xl font-bold mb-5 font-aeonik;
   }
   .btn {
     @apply flex h-[55px] gap-4 items-center justify-center cursor-pointer p-3 rounded-xl bg-zinc-800 transition-all active:scale-95 text-white mx-auto;
@@ -92,23 +90,25 @@ body {
     @apply w-full h-full border bg-zinc-900 border-zinc-800 shadow-inner shadow-zinc-600/40 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
   .head-text {
-    @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent font-bold lg:text-[60px] text-[30px];
+    @apply bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent font-bold lg:text-[60px] text-[30px] font-aeonik;
   }
   .sub-title {
-    @apply text-gray-300 font-medium mt-6 xl:text-[25px] text-[17px];
+    @apply text-gray-300 font-medium mt-6 xl:text-[25px] text-[17px] font-sora;
+  }
+  .grid-headtext {
+    @apply text-xl font-bold text-white font-aeonik;
+  }
+  .grid-subtext {
+    @apply text-[#afb0b6] text-[0.8rem] xl:leading-[32px] font-sora;
   }
   .copy-container {
     @apply cursor-pointer flex justify-center items-center gap-2;
   }
-  .grid-headtext {
-    @apply text-xl font-bold text-white;
-  }
+
   .text_div {
     @apply flex relative w-full h-[16.55rem] text-[#3b3b3b] text-[0.88rem] leading-[1.25rem] transition-all duration-300 ease-in-out flex-col gap-6;
   }
-  .grid-subtext {
-    @apply text-[#afb0b6] text-[0.8rem] xl:leading-[32px];
-  }
+
   @media (max-width: 640px) {
     .sm\:before-blur-15::before {
       filter: blur(15px);
@@ -212,4 +212,15 @@ body {
 
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .waving,
+  .animate-pulse-slow,
+  .animate-fade-in-up,
+  .animate-fade-in-up-delay,
+  .animate-scale-in,
+  [style*="animation"] {
+    animation: none !important;
+    transition: none !important;
+  }
 }

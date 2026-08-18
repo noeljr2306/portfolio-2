@@ -29,7 +29,7 @@ const Home = () => {
       }, 100);
       return () => clearTimeout(timeout);
     }
-  }, [hash]);
+  }, [hash]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="relative duration-700 max-w-7xl mx-auto">
