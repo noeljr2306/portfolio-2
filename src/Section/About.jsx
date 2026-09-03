@@ -77,10 +77,10 @@ const About = () => {
                 />
                 <p className="grid-subtext">
                   <br />I am a frontend developer with over three years of
-                  experience, with a growing specialization in Web3 Development. I have optimized my skills in the
-                  development of web, and blockchain-connected
-                  applications. I am also learning and adapting to new
-                  technologies to improve my skill stack.
+                  experience and a growing specialization in Web3 Development. I
+                  have optimized my skills in developing web and
+                  blockchain-connected applications. I am also learning and
+                  adapting to new technologies to improve my skill stack.
                 </p>
               </div>
               <div className="flex mt-5 gap-3 flex-wrap">
