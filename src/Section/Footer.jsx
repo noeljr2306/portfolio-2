@@ -165,7 +165,7 @@ const Footer = () => {
     { name: "Contact", url: "#contact" },
     {
       name: "Resume",
-      url: "/resume.pdf",
+      url: "/Eruotor_Noel_Resume.pdf",
       download: "Noel-Eruotor-Resume.pdf",
       external: true,
     },
